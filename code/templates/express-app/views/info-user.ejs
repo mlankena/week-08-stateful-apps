@@ -1,0 +1,10 @@
+<%include header %>
+<h3><%= title %></h3>
+<% if (name === undefined) { %>
+<p>You must specify a user name!</p>
+<% } else if (user === undefined) { %>
+<p>That user does not exist!</p>
+<% } else { %>
+<p>You requested information about: <strong><%= user.name %></strong>.</p>
+<% } %>
+<%include footer %>

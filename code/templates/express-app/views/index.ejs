@@ -1,0 +1,25 @@
+<%include header %>
+
+<h1><%= title %></h1>
+
+<!-- Expression Evaluation: -->
+<p>Welcome to <%= title %></p>
+
+<!-- Executing JS and Generating HTML: -->
+<h3>Registered Users</h3>
+
+<% if (names.length === 0) { %>
+  <p>There are currently no registered users. Please
+     register a new <a class="reglink" href="/users/new">user</a>
+     when you have the time!</p>
+<% } else { %>
+<ul>
+<% names.forEach(function (user) { %>
+  <li><%= user.name %></li>
+<% }); %>
+</ul>
+<p>Please <a class="reglink" href="/users/new">register</a>
+   a new user.</p>
+<% } %>
+
+<%include footer %>

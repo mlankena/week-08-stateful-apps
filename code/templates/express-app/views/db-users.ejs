@@ -1,0 +1,21 @@
+<%include header %>
+
+<h1><%= title %></h1>
+
+<!-- Expression Evaluation: -->
+<p>Welcome to <%= title %></p>
+
+<!-- Executing JS and Generating HTML: -->
+<h3>Registered Users in Database</h3>
+
+<% if (rows.length === 0) { %>
+  <p>There are currently no registered users in the database</p>
+<% } else { %>
+<ul>
+<% rows.forEach(function (user) { %>
+  <li><%= user.fname %></li>
+<% }); %>
+</ul>
+<% } %>
+
+<%include footer %>
